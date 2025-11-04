@@ -285,3 +285,19 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 ## License
 
 This project is licensed under the Apache-2.0 License.
+
+
+# Region fix
+
+Updated aws-lsp-codewhisperer-token-binary.js to use eu-west-1 region instead of us-east-1
+
+```sh
+
+```bash
+    sed -i '.bak'  '
+    s/SsoRegion="us-east-1"/SsoRegion="eu-west-1"/g;
+    s/DEFAULT_AWS_Q_REGION="us-east-1"/DEFAULT_AWS_Q_REGION="eu-west-1"/g;
+    s#"eu-central-1","https://q.eu-central-1#"eu-west-1","https://q.eu-central-1#g
+    ' aws-lsp-codewhisperer-token-binary.js
+```
+
